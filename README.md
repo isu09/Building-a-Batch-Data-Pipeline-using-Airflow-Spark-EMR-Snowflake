@@ -7,3 +7,6 @@ In this project we use:
 ✅AWS EMR for the heavy data processing.
 
 ✅Use Airflow to create the EMR cluster, and then terminate once the processing is complete to save on cost.
+
+![image](https://github.com/user-attachments/assets/149c1d2e-fc7f-4003-8b51-3369226a4503)
+
