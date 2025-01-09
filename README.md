@@ -1,4 +1,5 @@
-# Project: ETL Automation on AWS EMR with Apache Airflow
+# Project: Building-a-Batch-Data-Pipeline-using-Airflow-Spark-EMR-Snowflake
+
 
 ## Overview:
 Automated Extract, Transform, Load (ETL) workflows using Apache Airflow, AWS Elastic MapReduce (EMR), and Spark for efficient data processing. Focused on cost optimization by using transient EMR clusters, performing data ingestion, transformation, and terminating clusters after processing.
