@@ -1,6 +1,57 @@
-#AWS-Big-Data-Pipeline-orchestrated-with-Airflow
+# Project: ETL Automation on AWS EMR with Apache Airflow
 
-A robust data pipeline leveraging Amazon EMR and PySpark, orchestrated seamlessly with Apache Airflow for efficient batch processing
+## Overview:
+Automated Extract, Transform, Load (ETL) workflows using Apache Airflow, AWS Elastic MapReduce (EMR), and Spark for efficient data processing. Focused on cost optimization by using transient EMR clusters, performing data ingestion, transformation, and terminating clusters after processing.
+
+## Key Responsibilities & Achievements:
+
+### Created and Managed Transient EMR Clusters:
+- Designed an Airflow DAG to automate the creation of on-demand EMR clusters, ensuring cost-effectiveness by terminating clusters after task completion.
+- Configured dynamic EMR cluster settings including instance groups, roles, and application installations.
+
+### ETL Workflow Automation:
+- Automated data ingestion and transformation using Apache Spark jobs within the EMR cluster.
+- Developed Spark scripts (`ingest.py`, `transform.py`) for data processing and loaded data into Amazon S3.
+
+### Polling Mechanism for Job Completion:
+- Implemented Airflow tasks to poll and monitor the progress of Spark jobs (ingestion and transformation) by checking EMR step status at regular intervals.
+
+### Cost Optimization through Cluster Termination:
+- Developed a termination task in the DAG to automatically shut down the EMR cluster after the ETL tasks are completed, minimizing infrastructure costs.
+
+## Technologies Used:
+- **AWS EMR & S3:** Managed Elastic MapReduce clusters and leveraged S3 for storage.
+- **Apache Airflow:** Automated ETL pipelines and orchestrated tasks for cluster management, data ingestion, and transformation.
+- **Apache Spark:** Performed distributed data processing for ingestion and transformation tasks.
+- **AWS CLI & Boto3:** Used for managing resources and interacting with AWS services programmatically.
+
+## Implementation Steps:
+
+### AWS CLI Setup:
+- Configured AWS CLI and AWS credentials to interact with AWS resources.
+
+### Airflow DAG Configuration:
+- Designed the Airflow DAG to orchestrate the following tasks:
+  - **Create EMR Cluster:** Dynamically provisions EMR clusters.
+  - **Ingest Data (`ingest_layer`):** Runs Spark ingestion jobs stored on S3.
+  - **Poll for Ingestion Completion (`poll_step_layer`):** Monitors job completion status.
+  - **Transform Data (`transform_layer`):** Runs Spark transformation jobs stored on S3.
+  - **Poll for Transformation Completion (`poll_step_layer2`):** Monitors job completion.
+  - **Terminate EMR Cluster:** Shuts down the cluster to save costs.
+
+### Data Management:
+- Downloaded and uploaded the Iris dataset to S3 using AWS CLI, facilitating data availability for processing in the EMR cluster.
+
+## Results:
+- **Scalable and Cost-Effective Data Processing:** Reduced AWS costs by automating EMR cluster creation and termination.
+- **Streamlined ETL Pipeline:** Achieved seamless data processing from ingestion to transformation using Spark on EMR, automated via Apache Airflow.
+
+
+
+
+
+
+
 
 
 ##Architecture Diagram
@@ -9,7 +60,7 @@ A robust data pipeline leveraging Amazon EMR and PySpark, orchestrated seamlessl
 
 ![image](https://github.com/user-attachments/assets/5666547b-0ea5-406e-9cf4-3ffc5b04f25c)
 
-###Airflow DAG for AWS EMR Automation - Project Summary
+#**Airflow DAG for AWS EMR Automation - Project Summary**
 
 **Overview**
 
