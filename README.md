@@ -2,7 +2,7 @@
 
 
 ## Overview:
-Automated Extract, Transform, Load (ETL) workflows using Apache Airflow, AWS Elastic MapReduce (EMR), and Spark for efficient data processing. Focused on cost optimization by using transient EMR clusters, performing data ingestion, transformation, and terminating clusters after processing.
+Automated Extract, Transform, Load (ETL) workflows using Apache Airflow, AWS Elastic MapReduce (EMR), and Spark for efficient data processing. Focused on cost optimization by using transient EMR clusters, performing data ingestion, transformation, and terminating clusters after processing. Integrated Snowflake for data storage and analytics, enabling seamless data transfer from EMR to Snowflake.
 
 ## Key Responsibilities & Achievements:
 
@@ -20,11 +20,16 @@ Automated Extract, Transform, Load (ETL) workflows using Apache Airflow, AWS Ela
 ### Cost Optimization through Cluster Termination:
 - Developed a termination task in the DAG to automatically shut down the EMR cluster after the ETL tasks are completed, minimizing infrastructure costs.
 
+### Integration with Snowflake:
+- Integrated Snowflake as the data warehouse for storing transformed data, enabling fast and scalable analytics.
+- Facilitated seamless data transfer from EMR to Snowflake, ensuring a smooth flow from ETL processing to data storage and analysis.
+
 ## Technologies Used:
 - **AWS EMR & S3:** Managed Elastic MapReduce clusters and leveraged S3 for storage.
 - **Apache Airflow:** Automated ETL pipelines and orchestrated tasks for cluster management, data ingestion, and transformation.
 - **Apache Spark:** Performed distributed data processing for ingestion and transformation tasks.
 - **AWS CLI & Boto3:** Used for managing resources and interacting with AWS services programmatically.
+- **Snowflake:** Data warehouse used for storing and analyzing the transformed data.
 
 ## Implementation Steps:
 
@@ -39,6 +44,7 @@ Automated Extract, Transform, Load (ETL) workflows using Apache Airflow, AWS Ela
   - **Transform Data (`transform_layer`):** Runs Spark transformation jobs stored on S3.
   - **Poll for Transformation Completion (`poll_step_layer2`):** Monitors job completion.
   - **Terminate EMR Cluster:** Shuts down the cluster to save costs.
+  - **Transfer Data to Snowflake:** Moves transformed data from EMR to Snowflake for storage and further analytics.
 
 ### Data Management:
 - Downloaded and uploaded the Iris dataset to S3 using AWS CLI, facilitating data availability for processing in the EMR cluster.
@@ -46,13 +52,7 @@ Automated Extract, Transform, Load (ETL) workflows using Apache Airflow, AWS Ela
 ## Results:
 - **Scalable and Cost-Effective Data Processing:** Reduced AWS costs by automating EMR cluster creation and termination.
 - **Streamlined ETL Pipeline:** Achieved seamless data processing from ingestion to transformation using Spark on EMR, automated via Apache Airflow.
-
-
-
-
-
-
-
+- **Efficient Data Storage and Analytics:** Integrated Snowflake for optimized data storage and fast analytics, enabling actionable business insights.
 
 
 ##Architecture Diagram
