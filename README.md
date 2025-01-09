@@ -60,7 +60,7 @@ Automated Extract, Transform, Load (ETL) workflows using Apache Airflow, AWS Ela
 
 ![image](https://github.com/user-attachments/assets/5666547b-0ea5-406e-9cf4-3ffc5b04f25c)
 
-#**Airflow DAG for AWS EMR Automation - Project Summary**
+#**Airflow DAG for AWS EMR Automation **
 
 **Overview**
 
